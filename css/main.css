@@ -671,9 +671,13 @@ Helper classes
     }
     /** Mapa **/
     
+    .map4 {
+        height: 400px;
+        display: none;
+    }
+    
     .mapa {
         height: 420px;
-        background-color: green;
     }
     /** Testimoniales **/
     
@@ -917,7 +921,7 @@ Helper classes
     
     .contenido-dia {
         padding: 20px;
-        /*display: none;*/
+        display: none;
         margin-right: 10px;
         margin-left: 10px;
     }
@@ -1000,6 +1004,7 @@ Helper classes
     #lista-productos {
         background-color: #e1e1e1;
         padding: 20px;
+        display: none;
     }
     
     #suma-total {
@@ -1007,6 +1012,13 @@ Helper classes
         font-size: 2rem;
         color: #fe4918;
         margin-bottom: 2rem;
+    }
+    
+    #error {
+        clear: both;
+        padding: 20px;
+        text-align: center;
+        display: none;
     }
     /*
 * Hide only visually, but have it available for screen readers:

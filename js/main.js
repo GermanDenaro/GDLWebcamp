@@ -5,6 +5,18 @@
 
     document.addEventListener('DOMContentLoaded', function() {
 
+        var map = L.map('mapa').setView([-34.669076, -58.564854], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([-34.669076, -58.564854]).addTo(map)
+            .bindPopup('GDLWEBCAMP </br> Entradas en stock.')
+            .openPopup()
+            .bindTooltip('Por entrada Florencio Varela')
+            .openTooltip();
+
         //CAMPO DATOS USUARIO
         var nombre = document.getElementById('nombre');
         var apellido = document.getElementById('apellido');
@@ -27,6 +39,39 @@
         var camisas = document.getElementById('camisa_evento');
 
         calcular.addEventListener('click', calcularMontos);
+
+        pase_dia.addEventListener('blur', mostrarDias);
+        pase_dosdias.addEventListener('blur', mostrarDias);
+        pase_completo.addEventListener('blur', mostrarDias);
+
+        nombre.addEventListener('blur', validarCampos);
+        apellido.addEventListener('blur', validarCampos);
+        email.addEventListener('blur', validarCampos);
+        email.addEventListener('blur', validarMail);
+
+        function validarCampos() {
+            if (this.value == '') {
+                errorDIV.style.display = 'block';
+                errorDIV.innerHTML = "Este campo es obligatorio";
+                this.style.border = '1px solid red';
+                errorDIV.style.border = '1px solid red';
+            } else {
+                errorDIV.style.display = 'none';
+                this.style.border = '1px solid #cccccc'
+            }
+        }
+
+        function validarMail() {
+            if (this.value.indexOf("@") > +1) {
+                errorDIV.style.display = 'none';
+                this.style.border = '1px solid #cccccc'
+            } else {
+                errorDIV.style.display = 'block';
+                errorDIV.innerHTML = "Debe tener obligatoriamente una '@'";
+                this.style.border = '1px solid red';
+                errorDIV.style.border = '1px solid red';
+            }
+        }
 
         function calcularMontos(event) {
             event.preventDefault();
@@ -59,6 +104,7 @@
                 if (cantEtiquetas >= 1) {
                     listadoProductos.push(cantEtiquetas + ' Etiquetas');
                 }
+                lista_productos.style.display = "block";
                 lista_productos.innerHTML = '';
                 for (var i = 0; i < listadoProductos.length; i++) {
                     lista_productos.innerHTML += listadoProductos[i] + '<br/>';
@@ -69,6 +115,34 @@
             }
         }
 
+        function mostrarDias() {
+            var boletosDia = parseInt(pase_dia.value, 10) || 0;
+            var boletosd2Dias = parseInt(pase_dosdias.value, 10) || 0;
+            var boletoCompleto = parseInt(pase_completo.value, 10) || 0;
+
+            var diasElegidos = [];
+
+            if (boletosDia > 0) {
+                diasElegidos.push('viernes');
+            }
+            if (boletosd2Dias > 0) {
+                diasElegidos.push('viernes', 'sabado');
+            }
+            if (boletoCompleto > 0) {
+                diasElegidos.push('viernes', 'sabado', 'domingo');
+            }
+            for (var i = 0; i < diasElegidos.length; i++) {
+                document.getElementById(diasElegidos[i]).style.display = 'block';
+            }
+        }
+
 
     }); // DOM CONTENT LOADED
 })();
+
+
+$(function() {
+    $('.menu-programa a').on('click', function() {
+
+    })
+});
