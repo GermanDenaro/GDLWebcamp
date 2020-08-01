@@ -40,7 +40,7 @@
                 </nav>
                 <div class="informacion-evento">
                     <div class="clearfix">
-                        <p class="fecha"><i class="far fa-calendar-alt"></i>10-12-Dic</p>
+                        <p class="fecha"><i class="far fa-calendar-alt"></i>99-99-Dic</p>
                         <p class="ciudad"><i class="fas fa-map-marker-alt"></i>Buenos Aires, ARG</p>
                         <h1 class="nombre-sitio">GdlWebCamp</h1>
                         <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
@@ -99,7 +99,7 @@
                         <a href="#seminarios"><i class="fas fa-university"></i> Seminarios</a>
                     </nav>
 
-                    <div id="talleres" class="informacion-curso ocultar clearfix">
+                    <div id="talleres" class="info-curso ocultar clearfix">
                         <div class="detalle-evento">
                             <h3>HTML5, CSS3, JavaScript</h3>
                             <p><i class="fas fa-clock"></i> 16:00</p>
@@ -115,7 +115,7 @@
                         <a href="#" class="boton float-right">Ver Todos</a>
                     </div>
                     <!--talleres-->
-                    <div id="conferencias" class="informacion-curso ocultar clearfix">
+                    <div id="conferencias" class="info-curso ocultar clearfix">
                         <div class="detalle-evento">
                             <h3>Como ser Freelancer</h3>
                             <p><i class="fas fa-clock"></i> 10:00</p>
@@ -130,7 +130,7 @@
                         </div>
                         <a href="#" class="boton float-right">Ver Todos</a>
                     </div>
-                    <div id="seminarios" class="informacion-curso ocultar clearfix">
+                    <div id="seminarios" class="info-curso ocultar clearfix">
                         <div class="detalle-evento">
                             <h3>Diseño UI/UX para móviles</h3>
                             <p><i class="fas fa-clock"></i> 17:00</p>
@@ -200,13 +200,13 @@
         <div class="contendor">
             <ul class="resumen-evento clearfix">
                 <li>
-                    <p class="numero">6</p> Invitados</li>
+                    <p class="numero"></p> Invitados</li>
                 <li>
-                    <p class="numero">15</p> Talleres</li>
+                    <p class="numero"></p> Talleres</li>
                 <li>
-                    <p class="numero">3</p> Días</li>
+                    <p class="numero"></p> Días</li>
                 <li>
-                    <p class="numero">9</p> Conferencias</li>
+                    <p class="numero"></p> Conferencias</li>
             </ul>
         </div>
 
@@ -309,20 +309,20 @@
         <div class="cuenta-regresiva contenedor">
             <ul class="cuenta">
                 <li>
-                    <p class="numero">80</p>
+                    <p class="numero" id="dias"></p>
                     <p class="tiempo">Días</p>
                 </li>
                 <li>
-                    <p class="numero">15</p>
+                    <p class="numero" id="horas"></p>
                     <p class="tiempo">Horas</p>
                 </li>
                 <li>
-                    <p class="numero">5</p>
+                    <p class="numero" id="minutos"></p>
                     <p class="tiempo">Minutos</p>
                 </li>
 
                 <li>
-                    <p class="numero">30</p>
+                    <p class="numero" id="segundos"></p>
                     <p class="tiempo">Segundos</p>
                 </li>
 
@@ -360,10 +360,17 @@
 
     </footer>
 
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js "></script>
     <script src="js/vendor/modernizr-3.11.2.min.js "></script>
+    <script src="js/jquery.lettering.js "></script>
+    <script src="js/jquery.animateNumber.js "></script>
+    <script src="js/jquery.countdown.js"></script>
     <script src="js/plugins.js "></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="js/main.js "></script>
+    <script src="js/mapa.js "></script>
+
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
